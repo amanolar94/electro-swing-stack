@@ -1,0 +1,42 @@
+{
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "build": "npm run build:css && remix build",
+    "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
+    "dev": "concurrently \"npm run dev:css\" \"remix dev\"",
+    "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "start": "remix-serve build",
+    "vitedev": "concurrently \"npm run dev:css\" \"npx remix-vite\""
+  },
+  "dependencies": {
+    "@prisma/client": "*",
+    "@remix-run/node": "*",
+    "@remix-run/react": "*",
+    "@remix-run/serve": "*",
+    "cross-env": "^7.0.3",
+    "isbot": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@remix-run/dev": "*",
+    "@remix-run/eslint-config": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "autoprefixer": "*",
+    "concurrently": "*",
+    "eslint": "*",
+    "eslint-plugin-unused-imports": "*",
+    "postcss": "*",
+    "prettier": "*",
+    "prettier-plugin-tailwindcss": "*",
+    "prisma": "*",
+    "remix-vite": "*",
+    "tailwindcss": "*",
+    "typescript": "*"
+  },
+  "engines": {
+    "node": ">=14"
+  }
+}
